@@ -1,5 +1,3 @@
-package Main;
-
 import ASCIIArt.PokemonArt;
 import Pokemon.Grass.Bulbasaur;
 import Pokemon.Fire.Charmander;
@@ -59,7 +57,7 @@ public class Main {
       Scanner scanner = new Scanner(System.in);
 
       System.out.println(
-          playerNumber + " please tell me your name. This will be your name as the Main.Trainer.");
+          playerNumber + " please tell me your name. This will be your name as the Trainer.");
       String trainerName = scanner.nextLine();
       if (playersMade == 0) {
         player1 = new Trainer(trainerName);

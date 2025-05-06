@@ -1,5 +1,3 @@
-package Main;
-
 import Pokemon.Pokemon;
 
 public class Trainer {
