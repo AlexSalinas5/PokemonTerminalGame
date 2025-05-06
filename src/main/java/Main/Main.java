@@ -1,13 +1,11 @@
-package org.example;
+package Main;
 
 import ASCIIArt.PokemonArt;
 import Pokemon.Grass.Bulbasaur;
 import Pokemon.Fire.Charmander;
 import Pokemon.Electricity.Pikachu;
-import Pokemon.Pokemon;
 import Pokemon.Water.Squirtle;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -61,7 +59,7 @@ public class Main {
       Scanner scanner = new Scanner(System.in);
 
       System.out.println(
-          playerNumber + " please tell me your name. This will be your name as the Trainer.");
+          playerNumber + " please tell me your name. This will be your name as the Main.Trainer.");
       String trainerName = scanner.nextLine();
       if (playersMade == 0) {
         player1 = new Trainer(trainerName);
@@ -202,56 +200,56 @@ public class Main {
     String statusReportPlayer2 = "Status Report: ";
     String statusReportPlayer3 = "Status Report: ";
 
-    while (gameEnding) {
-      System.out.println("Round: " + roundNumber);
-
-      if (player3Alive) {
-        System.out.println(statusReportPlayer3);
-        System.out.println("Your Name: " + player3.getName() + " Your pokemon: " +
-                player3.getCurrentPokemon().getName() + " Your Pokemon Health: " +
-                player3.getCurrentPokemon().getHealth() + "Your pokemon Attack: " +
-                player3.getCurrentPokemon().getAttackAndDamageInfo());
-
-        System.out.println("Type the name of the player you want to attack!: \"" +
-                player1.getName() + "\" or \"" + player2.getName() + "\"");
-        input = scanner.nextLine().toUpperCase();
-
-        boolean pass = true;
-        while (pass) {
-          try {
-            if ((!input.equals(player1.getName().toUpperCase())) &&
-                    (!input.equals(player2.getName().toUpperCase()))) {
-              throw new IllegalArgumentException("Please enter the name correctly");
-            }
-            if (input.equals(player1.getName().toUpperCase())) {
-
-              player1.getCurrentPokemon().gotHit(player3.getCurrentPokemon().getAttackResult2());
-              System.out.println("Used " + player3.getCurrentPokemon().getAttackName() +
-                      "Against " + player1.getName() + "Pokemon " + player1.getCurrentPokemon().getName() +
-                      "Dealing " + player3.getCurrentPokemon().getAttackDamage() + " Damage!" + player1.getName() +
-                      "'s pokemon now has " + player1.getCurrentPokemon().getHealth() + " health ");
-              statusReportPlayer1 += "Player 3: " + player3.getName() + "attacked you dealing
-              " + player3.getCurrentPokemon().getAttackDamage() + " to your poor little pokemon";
-            } else if (input.equals(player2.getName().toUpperCase())) {
-
-              player2.getCurrentPokemon().gotHit(player3.getCurrentPokemon().getAttackDamage());
-              System.out.println("Used " + player3.getCurrentPokemon().getAttackName() +
-                      "Against " + player2.getName() + "Pokemon " + player2.getCurrentPokemon().getName() +
-                      "Dealing " + player3.getCurrentPokemon().getAttackDamage() + " Damage!" + player2.getName() +
-                      "'s pokemon now has " + player2.getCurrentPokemon().getHealth() + " health ");
-              statusReportPlayer2 += "Player 3: " + player3.getName() + "attacked you dealing
-              " + player3.getCurrentPokemon().getAttackDamage() + " to your poor little pokemon";
-            }
-            pass = false;
-          } catch (IllegalArgumentException e) {
-            System.out.println("Type the name of the player you want to attack!: \"" +
-                    player1.getName() + "\" or \"" + player2.getName() + "\"");
-          }
-        }
-
-      }
-
-    }
+//    while (gameEnding) {
+//      System.out.println("Round: " + roundNumber);
+//
+//      if (player3Alive) {
+//        System.out.println(statusReportPlayer3);
+//        System.out.println("Your Name: " + player3.getName() + " Your pokemon: " +
+//                player3.getCurrentPokemon().getName() + " Your Pokemon Health: " +
+//                player3.getCurrentPokemon().getHealth() + "Your pokemon Attack: " +
+//                player3.getCurrentPokemon().getAttackAndDamageInfo());
+//
+//        System.out.println("Type the name of the player you want to attack!: \"" +
+//                player1.getName() + "\" or \"" + player2.getName() + "\"");
+//        input = scanner.nextLine().toUpperCase();
+//
+//        boolean pass = true;
+//        while (pass) {
+//          try {
+//            if ((!input.equals(player1.getName().toUpperCase())) &&
+//                    (!input.equals(player2.getName().toUpperCase()))) {
+//              throw new IllegalArgumentException("Please enter the name correctly");
+//            }
+//            if (input.equals(player1.getName().toUpperCase())) {
+//
+//              player1.getCurrentPokemon().gotHit(player3.getCurrentPokemon().getAttackResult2());
+//              System.out.println("Used " + player3.getCurrentPokemon().getAttackName() +
+//                      "Against " + player1.getName() + "Pokemon " + player1.getCurrentPokemon().getName() +
+//                      "Dealing " + player3.getCurrentPokemon().getAttackDamage() + " Damage!" + player1.getName() +
+//                      "'s pokemon now has " + player1.getCurrentPokemon().getHealth() + " health ");
+//              statusReportPlayer1 += "Player 3: " + player3.getName() + "attacked you dealing
+//              " + player3.getCurrentPokemon().getAttackDamage() + " to your poor little pokemon";
+//            } else if (input.equals(player2.getName().toUpperCase())) {
+//
+//              player2.getCurrentPokemon().gotHit(player3.getCurrentPokemon().getAttackDamage());
+//              System.out.println("Used " + player3.getCurrentPokemon().getAttackName() +
+//                      "Against " + player2.getName() + "Pokemon " + player2.getCurrentPokemon().getName() +
+//                      "Dealing " + player3.getCurrentPokemon().getAttackDamage() + " Damage!" + player2.getName() +
+//                      "'s pokemon now has " + player2.getCurrentPokemon().getHealth() + " health ");
+//              statusReportPlayer2 += "Player 3: " + player3.getName() + "attacked you dealing
+//              " + player3.getCurrentPokemon().getAttackDamage() + " to your poor little pokemon";
+//            }
+//            pass = false;
+//          } catch (IllegalArgumentException e) {
+//            System.out.println("Type the name of the player you want to attack!: \"" +
+//                    player1.getName() + "\" or \"" + player2.getName() + "\"");
+//          }
+//        }
+//
+//      }
+//
+//    }
 
 
 //        while (gameEnding) {
